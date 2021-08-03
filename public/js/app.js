@@ -1906,8 +1906,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.$http.get('/api/charts/get-weekly-retention-data').then(function (response) {
-      _this.chartOptions.series = response.data.records;
-      _this.chartOptions.xAxis.categories = response.data.labels;
+      _this.chartOptions.series = response.data.series;
+      _this.chartOptions.xAxis.categories = response.data.xAxis;
     });
   }
 });

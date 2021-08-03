@@ -18,16 +18,14 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
 
-
-
         $this->app->singleton(RetentionDataRepositoryInterface::class, function ($app) {
             return new RetentionDataRepository(storage_path('app/export.csv'));
         });
+
         $this->app->bind(
             WeeklyRetentionChartDataRepositoryInterface::class,
             WeeklyRetentionChartDataRepository::class
         );
-
 
     }
 

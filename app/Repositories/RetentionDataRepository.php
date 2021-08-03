@@ -48,23 +48,28 @@ class RetentionDataRepository implements RetentionDataRepositoryInterface
     public function loadDataFromFile(): Collection
     {
         $this->retentionData = collect();
+
         $fileContent = trim(File::get($this->fileLocation));
 
-        $fileRows = explode("\n", $fileContent);
+        if(!empty($fileContent)) {
 
-        for ($i = 1; $i < count($fileRows); $i++) {
-            $row = explode(";", trim($fileRows[$i]));
+            $fileRows = explode("\n", $fileContent);
 
-            $this->retentionData->add(
-                new RetentionData([
-                    'user_id' => $row[0],
-                    'created_at' => $row[1],
-                    'onboarding_percentage' => $row[2],
-                    'count_applications' => $row[3],
-                    'count_accepted_applications' => $row[4],
-                ])
-            );
+            for ($i = 1; $i < count($fileRows); $i++) {
+                $row = explode(";", trim($fileRows[$i]));
+
+                $this->retentionData->add(
+                    new RetentionData([
+                        'user_id' => $row[0],
+                        'created_at' => $row[1],
+                        'onboarding_percentage' => $row[2],
+                        'count_applications' => $row[3],
+                        'count_accepted_applications' => $row[4],
+                    ])
+                );
+            }
         }
+
         return $this->retentionData;
     }
 

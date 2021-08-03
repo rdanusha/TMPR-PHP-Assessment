@@ -28,11 +28,9 @@ class RetentionChartDataController extends Controller
      */
     public function index()
     {
-        $weeklyRetentionChartData = $this->retentionDataRepository->getWeeklyRetentionData();
+        $weeklyRetentionChartData = $this->retentionDataRepository->getWeeklyRetentionChartData();
 
-        return response()->json(
-            $weeklyRetentionChartData
-        );
+        return $weeklyRetentionChartData->getChartData();
     }
 
 }

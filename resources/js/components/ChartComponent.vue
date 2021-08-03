@@ -58,8 +58,8 @@ export default {
     mounted: function () {
         this.$http.get('/api/charts/get-weekly-retention-data')
             .then(response => {
-                this.chartOptions.series = response.data.records;
-                this.chartOptions.xAxis.categories = response.data.labels;
+                this.chartOptions.series = response.data.series;
+                this.chartOptions.xAxis.categories = response.data.xAxis;
             });
     },
 }

@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Interfaces;
 
+use App\ChartData\ChartDataFormat;
+
 interface WeeklyRetentionChartDataRepositoryInterface
 {
-    public function getWeeklyRetentionData(): array;
+    public function getWeeklyRetentionChartData(): ChartDataFormat;
 }
