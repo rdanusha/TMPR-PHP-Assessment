@@ -25,6 +25,12 @@ This project is proving a solution to Temper to get an idea of how users are per
 5. Run `npm run dev`
 6. Run `php artisan serve`
 
+## API Documentation
+For api documentation visit :
+`{domain_name}/api/documentation`
+
+Ex: http://127.0.0.1:8000/api/documentation
+
 ## Screenshot
 
 ![Alt text](result-screenshot.png)
