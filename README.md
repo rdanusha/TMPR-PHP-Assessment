@@ -20,10 +20,12 @@ This project is proving a solution to Temper to get an idea of how users are per
 
 1. Download or clone the repository
 2. `cd {project_directory}` into the project directory
-3. Run `composer update`
-4. Run `npm install`
-5. Run `npm run dev`
-6. Run `php artisan serve`
+3. Rename `.env.example` as `.env`
+4. Run `composer update`
+5. Run `php artisan key:generate`
+6. Run `npm install`
+7. Run `npm run dev`
+8. Run `php artisan serve`
 
 ## API Documentation
 For api documentation visit :
