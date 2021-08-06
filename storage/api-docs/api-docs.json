@@ -1,0 +1,42 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "TMPR Retention Chart API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/charts/get-weekly-retention-data": {
+            "get": {
+                "tags": [
+                    "Retention Chart"
+                ],
+                "description": "Get weekly retention data",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "series": {
+                                            "type": "json",
+                                            "example": "[{'name':'2016-07-18','data':[100,100,99,47,44,41,41,41,41,40,29]},{'name':'2016-07-25','data':[100,100,99,47,44,41,41,41,41,40,29]}]"
+                                        },
+                                        "xAxis": {
+                                            "type": "json",
+                                            "example": "[0,35,40,45,50,55,60,65,95,99,100]"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
