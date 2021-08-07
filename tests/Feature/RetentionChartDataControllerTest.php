@@ -20,4 +20,10 @@ class RetentionChartDataControllerTest extends TestCase
             ->assertHeader("Content-Type", "application/json");
     }
 
+    public function test_if_provide_a_wrong_api_endpoint()
+    {
+        $this->get('/api/charts/get-retention-data')
+            ->assertStatus(404);
+    }
+
 }

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\RetentionData;
 use App\Repositories\Interfaces\RetentionDataRepositoryInterface;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
@@ -22,9 +23,14 @@ class RetentionDataRepository implements RetentionDataRepositoryInterface
 
     /**
      * @param $fileLocation
+     * @throws FileNotFoundException
      */
     public function __construct($fileLocation)
     {
+        if(!file_exists($fileLocation)){
+           throw new FileNotFoundException('Data source file not found');
+        }
+
         $this->fileLocation = $fileLocation;
     }
 
